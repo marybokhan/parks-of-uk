@@ -2,6 +2,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Type Definitions
+    
+    private enum Constants {
+        static let spacing: CGFloat = 3
+    }
+    
     // MARK: - Private Properties
     
     private let mainLabel: UILabel = {
@@ -17,14 +23,15 @@ class ViewController: UIViewController {
     private let flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 5
-        flowLayout.minimumInteritemSpacing = 5
+        flowLayout.minimumLineSpacing = Constants.spacing
+        flowLayout.minimumInteritemSpacing = Constants.spacing
         return flowLayout
     }()
     
     private let collectionView: UICollectionView
     
     private var parks = [Park]()
+    private var imageCache: [URL: UIImage] = [:]
     
     // MARK: - Init
     
@@ -33,9 +40,8 @@ class ViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        self.decodeData()
         self.setupViews()
-        
+        self.decodeData(completion: { self.collectionView.reloadData() })
     }
     
     required init?(coder: NSCoder) {
@@ -47,12 +53,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.collectionView.reloadData()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.flowLayout.itemSize = CGSize(width: (self.view.frame.size.width / 2) - 2.5, height: (self.view.frame.size.width / 3))
     }
     
     // MARK: - Private Logic
@@ -60,7 +60,13 @@ class ViewController: UIViewController {
     private func setupViews() {
         self.view.backgroundColor = .systemBackground
         
-        self.collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+        self.collectionView.register(CustomCollectionViewCell.self,
+                                     forCellWithReuseIdentifier: CustomCollectionViewCell.identifier
+        )
+        self.collectionView.register(CountryHeaderView.self,
+                                     forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                     withReuseIdentifier: CountryHeaderView.identifier
+        )
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
@@ -75,22 +81,37 @@ class ViewController: UIViewController {
             self.mainLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor),
             self.mainLabel.heightAnchor.constraint(equalToConstant: 170),
             
-            self.collectionView.topAnchor.constraint(equalTo: self.mainLabel.bottomAnchor, constant: 5),
+            self.collectionView.topAnchor.constraint(equalTo: self.mainLabel.bottomAnchor, constant: Constants.spacing),
             self.collectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             self.collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             self.collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
         ])
     }
     
-    private func decodeData() {
-        if let parksFileURL = Bundle.main.url(forResource: "Parks", withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: parksFileURL)
-                let jsonDecoder = JSONDecoder()
-                let decodedParks = try jsonDecoder.decode([Park].self, from: data)
-                self.parks = decodedParks
-            } catch {
-                print(error.localizedDescription)
+    private func decodeData(completion: @escaping () -> Void) {
+        DispatchQueue.global().async {
+            if let parksFileURL = Bundle.main.url(forResource: "Parks", withExtension: "json") {
+                do {
+                    let data = try Data(contentsOf: parksFileURL)
+                    let jsonDecoder = JSONDecoder()
+                    let decodedParks = try jsonDecoder.decode([Park].self, from: data)
+                    self.parks = decodedParks
+                    
+                    for park in decodedParks {
+                        guard let url = URL(string: park.imageURL),
+                              let data = try? Data(contentsOf: url),
+                              let image = UIImage(data: data)
+                        else { continue }
+                        
+                        self.imageCache[url] = image
+                    }
+                    
+                    DispatchQueue.main.async {
+                        completion()
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
         }
     }
@@ -114,27 +135,44 @@ extension ViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell
         else { return CustomCollectionViewCell(frame: .zero) }
         
-        let stringUrl = parks[indexPath.row].imageURL
-        guard let url = URL(string: stringUrl) else {
-            return cell
-        }
+        cell.configureLabel(label: self.parks[indexPath.row].name)
         
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                print("download for cell at index: \(indexPath.row)")
-                DispatchQueue.main.async {
-                    cell.imageView.image = UIImage(data: data)
-                }
-            }
-        }
+        let stringUrl = self.parks[indexPath.row].imageURL
+        guard let url = URL(string: stringUrl),
+              let image = self.imageCache[url]
+        else { return cell }
         
-        cell.parkNameLabel.text = parks[indexPath.row].name
+        cell.configureImage(image: image)
         
         return cell
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // Add other value after creating 3 arrays to separate them into 3 sections
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = self.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CountryHeaderView.identifier, for: indexPath)
+        return headerView
+    }
+
 }
 
-extension ViewController: UICollectionViewDelegate {
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: self.collectionView.bounds.width, height: 50)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: Constants.spacing, left: 0, bottom: Constants.spacing, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let interitemSpacing = self.flowLayout.minimumInteritemSpacing
+        let sideSize = (self.collectionView.frame.size.width / 2) - (interitemSpacing / 2)
+        return CGSize(width: sideSize, height: sideSize)
+    }
     
 }

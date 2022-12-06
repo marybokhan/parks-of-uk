@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A172ECCC293650B100D19DFA /* Parks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A172ECCB293650B100D19DFA /* Parks.swift */; };
+		A1444A552937A67600748B63 /* CountryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1444A542937A67600748B63 /* CountryHeaderView.swift */; };
+		A172ECCC293650B100D19DFA /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = A172ECCB293650B100D19DFA /* Park.swift */; };
 		A172ECCE293652F900D19DFA /* Parks.json in Resources */ = {isa = PBXBuildFile; fileRef = A172ECCD293652F900D19DFA /* Parks.json */; };
 		A18B69452931383600C34A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B69442931383600C34A41 /* AppDelegate.swift */; };
 		A18B69492931383600C34A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B69482931383600C34A41 /* ViewController.swift */; };
@@ -17,7 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A172ECCB293650B100D19DFA /* Parks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parks.swift; sourceTree = "<group>"; };
+		A1444A542937A67600748B63 /* CountryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryHeaderView.swift; sourceTree = "<group>"; };
+		A172ECCB293650B100D19DFA /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		A172ECCD293652F900D19DFA /* Parks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Parks.json; sourceTree = "<group>"; };
 		A18B69412931383600C34A41 /* parks-of-uk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "parks-of-uk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18B69442931383600C34A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +63,8 @@
 				A18B69442931383600C34A41 /* AppDelegate.swift */,
 				A18B69482931383600C34A41 /* ViewController.swift */,
 				A1FAF7A82934EDD700792AAA /* CustomCollectionViewCell.swift */,
-				A172ECCB293650B100D19DFA /* Parks.swift */,
+				A1444A542937A67600748B63 /* CountryHeaderView.swift */,
+				A172ECCB293650B100D19DFA /* Park.swift */,
 				A18B694D2931383800C34A41 /* Assets.xcassets */,
 				A18B694F2931383800C34A41 /* LaunchScreen.storyboard */,
 				A172ECCD293652F900D19DFA /* Parks.json */,
@@ -144,7 +147,8 @@
 				A18B69492931383600C34A41 /* ViewController.swift in Sources */,
 				A1FAF7A92934EDD700792AAA /* CustomCollectionViewCell.swift in Sources */,
 				A18B69452931383600C34A41 /* AppDelegate.swift in Sources */,
-				A172ECCC293650B100D19DFA /* Parks.swift in Sources */,
+				A172ECCC293650B100D19DFA /* Park.swift in Sources */,
+				A1444A552937A67600748B63 /* CountryHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

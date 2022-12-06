@@ -8,19 +8,20 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemGray5
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
     }()
     
-    let parkNameLabel: UILabel = {
+    private let parkNameLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .systemGreen
         label.textColor = .white
         label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -44,14 +45,18 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Internal Logic
     
-    func configure(label: String) {
+    func configureLabel(label: String) {
         self.parkNameLabel.text = label
+    }
+    
+    func configureImage(image: UIImage) {
+        self.imageView.image = image
     }
     
     // MARK: - Private Logic
     
     private func setupViews() {
-        self.contentView.backgroundColor = .systemPink
+        self.contentView.backgroundColor = .systemGreen
         self.contentView.clipsToBounds = true
         
         [self.imageView, self.parkNameLabel].forEach {
@@ -66,8 +71,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
             
             self.parkNameLabel.heightAnchor.constraint(equalToConstant: 30),
             self.parkNameLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            self.parkNameLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor),
-            self.parkNameLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor)
+            self.parkNameLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 5),
+            self.parkNameLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -5)
         ])
     }
 }
