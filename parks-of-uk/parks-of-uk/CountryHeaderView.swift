@@ -10,7 +10,6 @@ class CountryHeaderView: UICollectionReusableView {
     
     private let countryLabel: UILabel = {
         let label = UILabel()
-        label.text = "Country Header"
         label.textAlignment = .left
         label.textColor = .white
         label.font = .systemFont(ofSize: 25)
@@ -27,6 +26,12 @@ class CountryHeaderView: UICollectionReusableView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Internal logic
+    
+    func configureLabel(_ label: String) {
+        self.countryLabel.text = label
     }
     
     // MARK: - Private logic

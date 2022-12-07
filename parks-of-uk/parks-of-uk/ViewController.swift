@@ -30,8 +30,8 @@ class ViewController: UIViewController {
     
     private let collectionView: UICollectionView
     
-    private var parks = [Park]()
-    private var imageCache: [URL: UIImage] = [:]
+    private var sortedCountries: [String] = []
+    private var parks: [String: [(name: String, image: UIImage)]] = [:]
     
     // MARK: - Init
     
@@ -94,17 +94,28 @@ class ViewController: UIViewController {
                 do {
                     let data = try Data(contentsOf: parksFileURL)
                     let jsonDecoder = JSONDecoder()
-                    let decodedParks = try jsonDecoder.decode([Park].self, from: data)
-                    self.parks = decodedParks
                     
+                    // 1. decode parks in array (as default representation of json)
+                    let decodedParks = try jsonDecoder.decode([Park].self, from: data)
+                    
+                    // 2. fill parks by countries
                     for park in decodedParks {
+                        if self.parks[park.country] == nil {
+                            self.parks[park.country] = []
+                        }
+                        
                         guard let url = URL(string: park.imageURL),
                               let data = try? Data(contentsOf: url),
                               let image = UIImage(data: data)
                         else { continue }
                         
-                        self.imageCache[url] = image
+                        let parkNameAndImage = (name: park.name, image: image)
+                        
+                        self.parks[park.country]?.append(parkNameAndImage)
                     }
+                    
+                    // 3. save strict sorted sequence of countries in order to create correlation between number of section and country
+                    self.sortedCountries = self.parks.keys.sorted()
                     
                     DispatchQueue.main.async {
                         completion()
@@ -120,40 +131,36 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     
-    // TODO: - Sort parks by country and pack them into sections.
-    // 1. - Decode json into array of Park
-    // 2. - Split the original array into n arrays with a dedicated country parks
-    // 3. - Learn how to create section in collection view
-    // 4. - Create headers in collectrion view sections
-    // 5. - Configure each section header taking in account current country
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.parks.count
+        let country = self.sortedCountries[section]
+        return self.parks[country]?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell
         else { return CustomCollectionViewCell(frame: .zero) }
         
-        cell.configureLabel(label: self.parks[indexPath.row].name)
+        let country = self.sortedCountries[indexPath.section]
         
-        let stringUrl = self.parks[indexPath.row].imageURL
-        guard let url = URL(string: stringUrl),
-              let image = self.imageCache[url]
+        guard let parkNamesAndImages = self.parks[country]
         else { return cell }
         
-        cell.configureImage(image: image)
+        let parkNameAndImage = parkNamesAndImages[indexPath.row]
+        
+        cell.configureLabel(label: parkNameAndImage.name)
+        cell.configureImage(image: parkNameAndImage.image)
         
         return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // Add other value after creating 3 arrays to separate them into 3 sections
-        return 1
+        return self.sortedCountries.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = self.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CountryHeaderView.identifier, for: indexPath)
+        let country = self.sortedCountries[indexPath.section]
+        (headerView as? CountryHeaderView)?.configureLabel(country)
         return headerView
     }
 
