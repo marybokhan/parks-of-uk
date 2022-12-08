@@ -10,10 +10,10 @@ class CountryHeaderView: UICollectionReusableView {
     
     private let countryLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
-        label.textColor = .white
+        label.textAlignment = .center
+        label.textColor = AppConstants.Color.cornSilk
+        label.backgroundColor = AppConstants.Color.darkOliveGreen
         label.font = .systemFont(ofSize: 25)
-        label.backgroundColor = .systemGreen
         return label
     }()
     

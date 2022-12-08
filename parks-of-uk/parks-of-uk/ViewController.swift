@@ -10,12 +10,18 @@ class ViewController: UIViewController {
     
     // MARK: - Private Properties
     
+    private let topView: UIView = {
+        let view = UIView()
+        view.backgroundColor = AppConstants.Color.darkOliveGreen
+        return view
+    }()
+    
     private let mainLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemGreen
         label.text = "National Parks of UK"
-        label.textColor = .white
         label.textAlignment = .center
+        label.textColor = AppConstants.Color.cornSilk
+        label.backgroundColor = AppConstants.Color.darkOliveGreen
         label.font = .systemFont(ofSize: 30)
         return label
     }()
@@ -58,7 +64,8 @@ class ViewController: UIViewController {
     // MARK: - Private Logic
     
     private func setupViews() {
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = AppConstants.Color.laurelGreen
+        self.collectionView.backgroundColor = AppConstants.Color.laurelGreen
         
         self.collectionView.register(CustomCollectionViewCell.self,
                                      forCellWithReuseIdentifier: CustomCollectionViewCell.identifier
@@ -70,16 +77,32 @@ class ViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        [self.mainLabel, self.collectionView].forEach {
-            self.view.addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
+        self.topView.addSubview(self.mainLabel)
+        
+        self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.mainLabel.topAnchor.constraint(equalTo: self.topView.topAnchor, constant: 40),
+            self.mainLabel.leftAnchor.constraint(equalTo: self.topView.leftAnchor),
+            self.mainLabel.rightAnchor.constraint(equalTo: self.topView.rightAnchor),
+            self.mainLabel.bottomAnchor.constraint(equalTo: self.topView.bottomAnchor)
+        ])
+        
+        self.view.addSubview(self.topView)
+        self.view.addSubview(self.collectionView)
+        
+//        [self.mainLabel, self.collectionView].forEach {
+//            self.view.addSubview($0)
+//            $0.translatesAutoresizingMaskIntoConstraints = false
+//        }
+        
+        self.topView.translatesAutoresizingMaskIntoConstraints = false
+        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.mainLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            self.mainLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.mainLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            self.mainLabel.heightAnchor.constraint(equalToConstant: 170),
+            self.topView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.topView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.topView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            self.topView.heightAnchor.constraint(equalToConstant: 200),
             
             self.collectionView.topAnchor.constraint(equalTo: self.mainLabel.bottomAnchor, constant: Constants.spacing),
             self.collectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
@@ -110,7 +133,7 @@ class ViewController: UIViewController {
                         else { continue }
                         
                         let parkNameAndImage = (name: park.name, image: image)
-                        
+        
                         self.parks[park.country]?.append(parkNameAndImage)
                     }
                     
@@ -160,7 +183,10 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = self.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CountryHeaderView.identifier, for: indexPath)
         let country = self.sortedCountries[indexPath.section]
-        (headerView as? CountryHeaderView)?.configureLabel(country)
+        
+        let countryHeaderView = headerView as? CountryHeaderView
+        countryHeaderView?.configureLabel(country)
+        
         return headerView
     }
 

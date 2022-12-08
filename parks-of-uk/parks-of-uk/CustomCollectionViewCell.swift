@@ -10,7 +10,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .systemGray5
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -18,8 +17,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     private let parkNameLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemGreen
-        label.textColor = .white
+        label.backgroundColor = AppConstants.Color.darkOliveGreen
+        label.textColor = AppConstants.Color.cornSilk
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         return label
@@ -56,7 +55,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     // MARK: - Private Logic
     
     private func setupViews() {
-        self.contentView.backgroundColor = .systemGreen
+        self.contentView.backgroundColor = AppConstants.Color.darkOliveGreen
         self.contentView.clipsToBounds = true
         
         [self.imageView, self.parkNameLabel].forEach {
