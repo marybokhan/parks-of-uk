@@ -59,6 +59,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
     }
     
     // MARK: - Private Logic
@@ -78,7 +80,6 @@ class ViewController: UIViewController {
         self.collectionView.delegate = self
         
         self.topView.addSubview(self.mainLabel)
-        
         self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.mainLabel.topAnchor.constraint(equalTo: self.topView.topAnchor, constant: 40),
@@ -87,16 +88,10 @@ class ViewController: UIViewController {
             self.mainLabel.bottomAnchor.constraint(equalTo: self.topView.bottomAnchor)
         ])
         
-        self.view.addSubview(self.topView)
-        self.view.addSubview(self.collectionView)
-        
-//        [self.mainLabel, self.collectionView].forEach {
-//            self.view.addSubview($0)
-//            $0.translatesAutoresizingMaskIntoConstraints = false
-//        }
-        
-        self.topView.translatesAutoresizingMaskIntoConstraints = false
-        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        [self.topView, self.collectionView].forEach {
+            self.view.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
         
         NSLayoutConstraint.activate([
             self.topView.topAnchor.constraint(equalTo: self.view.topAnchor),
@@ -188,6 +183,11 @@ extension ViewController: UICollectionViewDataSource {
         countryHeaderView?.configureLabel(country)
         
         return headerView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let parkViewController = ParkViewController(nibName: nil, bundle: nil)
+        present(parkViewController, animated: true)
     }
 
 }

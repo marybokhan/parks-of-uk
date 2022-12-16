@@ -74,4 +74,5 @@ class CustomCollectionViewCell: UICollectionViewCell {
             self.parkNameLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -5)
         ])
     }
+
 }

@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A14070BC2940F34D0043A6B8 /* App Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14070BB2940F34D0043A6B8 /* App Constants.swift */; };
+		A12E89DC2943595B00972286 /* ParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E89DB2943595B00972286 /* ParkViewController.swift */; };
+		A14070BC2940F34D0043A6B8 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14070BB2940F34D0043A6B8 /* AppConstants.swift */; };
 		A1444A552937A67600748B63 /* CountryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1444A542937A67600748B63 /* CountryHeaderView.swift */; };
 		A172ECCC293650B100D19DFA /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = A172ECCB293650B100D19DFA /* Park.swift */; };
 		A172ECCE293652F900D19DFA /* Parks.json in Resources */ = {isa = PBXBuildFile; fileRef = A172ECCD293652F900D19DFA /* Parks.json */; };
 		A18B69452931383600C34A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B69442931383600C34A41 /* AppDelegate.swift */; };
 		A18B69492931383600C34A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B69482931383600C34A41 /* ViewController.swift */; };
 		A18B694E2931383800C34A41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18B694D2931383800C34A41 /* Assets.xcassets */; };
-		A18B69512931383800C34A41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18B694F2931383800C34A41 /* LaunchScreen.storyboard */; };
 		A1FAF7A92934EDD700792AAA /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FAF7A82934EDD700792AAA /* CustomCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A14070BB2940F34D0043A6B8 /* App Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Constants.swift"; sourceTree = "<group>"; };
+		A12E89DB2943595B00972286 /* ParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkViewController.swift; sourceTree = "<group>"; };
+		A14070BB2940F34D0043A6B8 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		A1444A542937A67600748B63 /* CountryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryHeaderView.swift; sourceTree = "<group>"; };
 		A172ECCB293650B100D19DFA /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		A172ECCD293652F900D19DFA /* Parks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Parks.json; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		A18B69442931383600C34A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18B69482931383600C34A41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A18B694D2931383800C34A41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A18B69502931383800C34A41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A18B69522931383800C34A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1FAF7A82934EDD700792AAA /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,14 +62,14 @@
 		A18B69432931383600C34A41 /* parks-of-uk */ = {
 			isa = PBXGroup;
 			children = (
-				A14070BB2940F34D0043A6B8 /* App Constants.swift */,
+				A14070BB2940F34D0043A6B8 /* AppConstants.swift */,
 				A18B69442931383600C34A41 /* AppDelegate.swift */,
 				A18B69482931383600C34A41 /* ViewController.swift */,
 				A1FAF7A82934EDD700792AAA /* CustomCollectionViewCell.swift */,
 				A1444A542937A67600748B63 /* CountryHeaderView.swift */,
+				A12E89DB2943595B00972286 /* ParkViewController.swift */,
 				A172ECCB293650B100D19DFA /* Park.swift */,
 				A18B694D2931383800C34A41 /* Assets.xcassets */,
-				A18B694F2931383800C34A41 /* LaunchScreen.storyboard */,
 				A172ECCD293652F900D19DFA /* Parks.json */,
 				A18B69522931383800C34A41 /* Info.plist */,
 			);
@@ -134,7 +134,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A18B69512931383800C34A41 /* LaunchScreen.storyboard in Resources */,
 				A18B694E2931383800C34A41 /* Assets.xcassets in Resources */,
 				A172ECCE293652F900D19DFA /* Parks.json in Resources */,
 			);
@@ -148,8 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A18B69492931383600C34A41 /* ViewController.swift in Sources */,
+				A12E89DC2943595B00972286 /* ParkViewController.swift in Sources */,
 				A1FAF7A92934EDD700792AAA /* CustomCollectionViewCell.swift in Sources */,
-				A14070BC2940F34D0043A6B8 /* App Constants.swift in Sources */,
+				A14070BC2940F34D0043A6B8 /* AppConstants.swift in Sources */,
 				A18B69452931383600C34A41 /* AppDelegate.swift in Sources */,
 				A172ECCC293650B100D19DFA /* Park.swift in Sources */,
 				A1444A552937A67600748B63 /* CountryHeaderView.swift in Sources */,
@@ -157,17 +157,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		A18B694F2931383800C34A41 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A18B69502931383800C34A41 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A18B69532931383800C34A41 /* Debug */ = {
