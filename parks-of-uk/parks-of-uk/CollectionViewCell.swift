@@ -1,10 +1,10 @@
 import UIKit
 
-class CustomCollectionViewCell: UICollectionViewCell {
+class CollectionViewCell: UICollectionViewCell {
     
     // MARK: - Internal Properties
     
-    static let identifier = "CustomCollectionViewCell"
+    static let identifier = "CollectionViewCell"
     
     // MARK: - Private Properties
     

@@ -1,9 +1,9 @@
-import UIKit
+import Foundation
 
-struct Park {
+struct CodablePark: Codable, Equatable {
     let name: String
     let country: String
-    let image: UIImage
+    let imageURL: String
     let keyActivities: String
     let website: String
 }

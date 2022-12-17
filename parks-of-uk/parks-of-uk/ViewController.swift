@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     private let collectionView: UICollectionView
     
     private var sortedCountries: [String] = []
-    private var parks: [String: [(name: String, image: UIImage)]] = [:]
+    private var parks: [String: [Park]] = [:]
     
     // MARK: - Init
     
@@ -69,8 +69,8 @@ class ViewController: UIViewController {
         self.view.backgroundColor = AppConstants.Color.laurelGreen
         self.collectionView.backgroundColor = AppConstants.Color.laurelGreen
         
-        self.collectionView.register(CustomCollectionViewCell.self,
-                                     forCellWithReuseIdentifier: CustomCollectionViewCell.identifier
+        self.collectionView.register(CollectionViewCell.self,
+                                     forCellWithReuseIdentifier: CollectionViewCell.identifier
         )
         self.collectionView.register(CountryHeaderView.self,
                                      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -114,22 +114,27 @@ class ViewController: UIViewController {
                     let jsonDecoder = JSONDecoder()
                     
                     // 1. decode parks in array (as default representation of json)
-                    let decodedParks = try jsonDecoder.decode([Park].self, from: data)
+                    let decodedParks = try jsonDecoder.decode([CodablePark].self, from: data)
                     
                     // 2. fill parks by countries
-                    for park in decodedParks {
-                        if self.parks[park.country] == nil {
-                            self.parks[park.country] = []
+                    for codablePark in decodedParks {
+                        if self.parks[codablePark.country] == nil {
+                            self.parks[codablePark.country] = []
                         }
                         
-                        guard let url = URL(string: park.imageURL),
-                              let data = try? Data(contentsOf: url),
+                        guard let imageUrl = URL(string: codablePark.imageURL),
+                              let data = try? Data(contentsOf: imageUrl),
                               let image = UIImage(data: data)
                         else { continue }
                         
-                        let parkNameAndImage = (name: park.name, image: image)
+                        let park = Park(name: codablePark.name,
+                                        country: codablePark.country,
+                                        image: image,
+                                        keyActivities: codablePark.keyActivities,
+                                        website: codablePark.website
+                        )
         
-                        self.parks[park.country]?.append(parkNameAndImage)
+                        self.parks[codablePark.country]?.append(park)
                     }
                     
                     // 3. save strict sorted sequence of countries in order to create correlation between number of section and country
@@ -149,30 +154,30 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return self.sortedCountries.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let country = self.sortedCountries[section]
         return self.parks[country]?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell
-        else { return CustomCollectionViewCell(frame: .zero) }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as? CollectionViewCell
+        else { return CollectionViewCell(frame: .zero) }
         
         let country = self.sortedCountries[indexPath.section]
         
-        guard let parkNamesAndImages = self.parks[country]
+        guard let parksInCurrentCountry = self.parks[country]
         else { return cell }
         
-        let parkNameAndImage = parkNamesAndImages[indexPath.row]
+        let park = parksInCurrentCountry[indexPath.row]
         
-        cell.configureLabel(label: parkNameAndImage.name)
-        cell.configureImage(image: parkNameAndImage.image)
+        cell.configureLabel(label: park.name)
+        cell.configureImage(image: park.image)
         
         return cell
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return self.sortedCountries.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -186,8 +191,16 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let parkViewController = ParkViewController(nibName: nil, bundle: nil)
-        present(parkViewController, animated: true)
+        
+        let country = self.sortedCountries[indexPath.section]
+        
+        guard let parksInCurrentCountry = self.parks[country]
+        else { return }
+        
+        let park = parksInCurrentCountry[indexPath.row]
+        
+        let parkViewController = ParkViewController(park: park)
+        self.present(parkViewController, animated: true)
     }
 
 }

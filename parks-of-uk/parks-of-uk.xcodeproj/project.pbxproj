@@ -10,26 +10,28 @@
 		A12E89DC2943595B00972286 /* ParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E89DB2943595B00972286 /* ParkViewController.swift */; };
 		A14070BC2940F34D0043A6B8 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14070BB2940F34D0043A6B8 /* AppConstants.swift */; };
 		A1444A552937A67600748B63 /* CountryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1444A542937A67600748B63 /* CountryHeaderView.swift */; };
-		A172ECCC293650B100D19DFA /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = A172ECCB293650B100D19DFA /* Park.swift */; };
+		A172ECCC293650B100D19DFA /* CodablePark.swift in Sources */ = {isa = PBXBuildFile; fileRef = A172ECCB293650B100D19DFA /* CodablePark.swift */; };
 		A172ECCE293652F900D19DFA /* Parks.json in Resources */ = {isa = PBXBuildFile; fileRef = A172ECCD293652F900D19DFA /* Parks.json */; };
 		A18B69452931383600C34A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B69442931383600C34A41 /* AppDelegate.swift */; };
 		A18B69492931383600C34A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B69482931383600C34A41 /* ViewController.swift */; };
 		A18B694E2931383800C34A41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18B694D2931383800C34A41 /* Assets.xcassets */; };
-		A1FAF7A92934EDD700792AAA /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FAF7A82934EDD700792AAA /* CustomCollectionViewCell.swift */; };
+		A1DA689E294CD8F1001BEE05 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA689D294CD8F0001BEE05 /* Park.swift */; };
+		A1FAF7A92934EDD700792AAA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FAF7A82934EDD700792AAA /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A12E89DB2943595B00972286 /* ParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkViewController.swift; sourceTree = "<group>"; };
 		A14070BB2940F34D0043A6B8 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		A1444A542937A67600748B63 /* CountryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryHeaderView.swift; sourceTree = "<group>"; };
-		A172ECCB293650B100D19DFA /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+		A172ECCB293650B100D19DFA /* CodablePark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePark.swift; sourceTree = "<group>"; };
 		A172ECCD293652F900D19DFA /* Parks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Parks.json; sourceTree = "<group>"; };
 		A18B69412931383600C34A41 /* parks-of-uk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "parks-of-uk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18B69442931383600C34A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18B69482931383600C34A41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A18B694D2931383800C34A41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A18B69522931383800C34A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1FAF7A82934EDD700792AAA /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		A1DA689D294CD8F0001BEE05 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+		A1FAF7A82934EDD700792AAA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +67,11 @@
 				A14070BB2940F34D0043A6B8 /* AppConstants.swift */,
 				A18B69442931383600C34A41 /* AppDelegate.swift */,
 				A18B69482931383600C34A41 /* ViewController.swift */,
-				A1FAF7A82934EDD700792AAA /* CustomCollectionViewCell.swift */,
+				A1FAF7A82934EDD700792AAA /* CollectionViewCell.swift */,
 				A1444A542937A67600748B63 /* CountryHeaderView.swift */,
 				A12E89DB2943595B00972286 /* ParkViewController.swift */,
-				A172ECCB293650B100D19DFA /* Park.swift */,
+				A1DA689D294CD8F0001BEE05 /* Park.swift */,
+				A172ECCB293650B100D19DFA /* CodablePark.swift */,
 				A18B694D2931383800C34A41 /* Assets.xcassets */,
 				A172ECCD293652F900D19DFA /* Parks.json */,
 				A18B69522931383800C34A41 /* Info.plist */,
@@ -148,10 +151,11 @@
 			files = (
 				A18B69492931383600C34A41 /* ViewController.swift in Sources */,
 				A12E89DC2943595B00972286 /* ParkViewController.swift in Sources */,
-				A1FAF7A92934EDD700792AAA /* CustomCollectionViewCell.swift in Sources */,
+				A1FAF7A92934EDD700792AAA /* CollectionViewCell.swift in Sources */,
+				A1DA689E294CD8F1001BEE05 /* Park.swift in Sources */,
 				A14070BC2940F34D0043A6B8 /* AppConstants.swift in Sources */,
 				A18B69452931383600C34A41 /* AppDelegate.swift in Sources */,
-				A172ECCC293650B100D19DFA /* Park.swift in Sources */,
+				A172ECCC293650B100D19DFA /* CodablePark.swift in Sources */,
 				A1444A552937A67600748B63 /* CountryHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,8 +289,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Parks UK";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,8 +315,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Parks UK";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
