@@ -54,19 +54,11 @@ class ViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        
-    }
-    
     // MARK: - Private Logic
     
     private func setupViews() {
         self.view.backgroundColor = AppConstants.Color.laurelGreen
+        
         self.collectionView.backgroundColor = AppConstants.Color.laurelGreen
         
         self.collectionView.register(CollectionViewCell.self,
@@ -79,8 +71,11 @@ class ViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
+        // Constraints
+        
         self.topView.addSubview(self.mainLabel)
         self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             self.mainLabel.topAnchor.constraint(equalTo: self.topView.topAnchor, constant: 40),
             self.mainLabel.leftAnchor.constraint(equalTo: self.topView.leftAnchor),
@@ -191,7 +186,6 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let country = self.sortedCountries[indexPath.section]
         
         guard let parksInCurrentCountry = self.parks[country]

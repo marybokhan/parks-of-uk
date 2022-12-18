@@ -38,8 +38,8 @@ class CountryHeaderView: UICollectionReusableView {
     
     private func setupUI() {
         self.addSubview(self.countryLabel)
-        
         self.countryLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             self.countryLabel.topAnchor.constraint(equalTo: self.topAnchor),
             self.countryLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),

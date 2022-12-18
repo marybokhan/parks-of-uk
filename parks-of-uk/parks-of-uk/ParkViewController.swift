@@ -2,6 +2,8 @@ import UIKit
 
 class ParkViewController: UIViewController {
     
+    // MARK: - Private properties
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -39,8 +41,9 @@ class ParkViewController: UIViewController {
     private let website: UITextView = {
         let textView = UITextView()
         textView.textAlignment = .left
+        textView.textColor = AppConstants.Color.cornSilk
         textView.backgroundColor = .clear
-        textView.linkTextAttributes = [.link: AppConstants.Color.lemonMeringue, .font: UIFont.boldSystemFont(ofSize: 20)]
+        textView.linkTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20)]
         return textView
     }()
     
@@ -63,11 +66,15 @@ class ParkViewController: UIViewController {
         self.website.isSelectable = true
         self.website.font = .systemFont(ofSize: 20)
         self.website.textColor = AppConstants.Color.cornSilk
+        
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Lifecycle
     
     override func updateViewConstraints() {
         self.view.frame.origin.y = UIScreen.main.bounds.height - 600
@@ -75,20 +82,11 @@ class ParkViewController: UIViewController {
         super.updateViewConstraints()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-    }
-    
-
-    
     // MARK: - Private logic
     
     private func setupUI() {
-        
         self.view.backgroundColor = AppConstants.Color.darkOliveGreen
 
-        
         [self.imageView, self.parkName, self.country, self.keyActivities, self.website].forEach {
             self.view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -129,7 +127,6 @@ class ParkViewController: UIViewController {
             self.website.heightAnchor.constraint(equalToConstant: 70)
         ])
         
-
     }
     
 }
@@ -139,6 +136,6 @@ extension UIView {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
-        layer.mask = mask
+        self.layer.mask = mask
     }
 }
