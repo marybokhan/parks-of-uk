@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     private let mainLabel: UILabel = {
         let label = UILabel()
-        label.text = "National Parks of UK"
+        label.text = "National Parks of the UK"
         label.textAlignment = .center
         label.textColor = AppConstants.Color.cornSilk
         label.backgroundColor = AppConstants.Color.darkOliveGreen
