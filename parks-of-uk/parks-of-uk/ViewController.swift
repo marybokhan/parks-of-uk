@@ -106,10 +106,9 @@ class ViewController: UIViewController {
             if let parksFileURL = Bundle.main.url(forResource: "Parks", withExtension: "json") {
                 do {
                     let data = try Data(contentsOf: parksFileURL)
-                    let jsonDecoder = JSONDecoder()
                     
                     // 1. decode parks in array (as default representation of json)
-                    let decodedParks = try jsonDecoder.decode([CodablePark].self, from: data)
+                    let decodedParks = try JSONDecoder().decode([CodablePark].self, from: data)
                     
                     // 2. fill parks by countries
                     for codablePark in decodedParks {
