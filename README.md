@@ -17,7 +17,7 @@ This app contains information about national parks of the United Kingdom.
 ## Preview
 
 <p align="center">
-    <img src="media/parks-of-uk.png", width="400">
+    <img src="media/parks-of-uk.png", width="600">
 </p>
 
 ## License
