@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-struct ParksApp: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+@main
+struct ParksApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ParkDetail()
+        }
     }
-}
-
-#Preview {
-    ParksApp()
 }
