@@ -10,8 +10,14 @@ struct Park: Hashable, Codable {
     var website: String
     
     private var imageURL: String
-    var image: Image {
-        Image(imageURL)
+    var image: Image? {
+        guard let url = URL(string: imageURL),
+              let data = try? Data(contentsOf: url),
+              let image = UIImage(data: data)
+        else {
+            return nil
+        }
+        return Image(uiImage: image)
     }
     
     private var coordinates: Coordinates

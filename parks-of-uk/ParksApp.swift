@@ -11,7 +11,7 @@ import SwiftUI
 struct ParksApp: App {
     var body: some Scene {
         WindowGroup {
-            ParkDetail()
+            Text("Hello")
         }
     }
 }

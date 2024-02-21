@@ -9,15 +9,10 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    var cooordinate = CLLocationCoordinate2D(latitude: 52.58774,
-                                            longitude: 1.61496)
+    var cooordinate: CLLocationCoordinate2D
     
     var body: some View {
-        if #available(iOS 17.0, *) {
-            Map(position: .constant(.region(region)))
-        } else {
-            // Fallback on earlier versions
-        }
+        Map(position: .constant(.region(region)))
     }
     
     private var region: MKCoordinateRegion {

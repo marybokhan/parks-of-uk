@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ParkDetail: View {
+    @Environment(ModelData.self) var modelData
+    var park: Park
+    
     var body: some View {
         ScrollView {
-            MapView()
+            MapView(cooordinate: park.locationCoordinate)
                 .frame(height: 300)
             
-            CircleImage()
+            CircleImage(image: park.image)
                 .offset(y: -120)
                 .padding(.bottom, -100)
             
             VStack(alignment: .leading) {
-                Text("Broads")
+                Text(park.name)
                     .font(.title)
-                Text("England")
+                Text(park.country)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 
@@ -28,21 +31,23 @@ struct ParkDetail: View {
                 
                 Text("About")
                     .font(.title3)
-                Text("The Norfolk and Suffolk Broads are Britain’s largest protected wetland and are unlike anywhere else. A rich tapestry of landscape, water and wildlife; woven together by history.\nTake to the water to discover our unique waterways, or soak up the history and wildlife on land. Either way, in the words of naturalist Ted Ellis, the Broads truly is a “breathing space for the cure of souls”.")
+                Text(park.description)
                     .padding(.bottom, 5)
                 Text("Key Activities")
                     .font(.title3)
-                Text("Boating, Walking & Cycling, Wildlife watching")
+                Text(park.keyActivities)
                     .padding(.bottom, 5)
                 Text("Website")
                     .font(.title3)
-                Text("https://www.visitthebroads.co.uk")
+                Text(park.website)
             }
+            .padding()
         }
-        .padding()
     }
 }
 
 #Preview {
-    ParkDetail()
+    let modelData = ModelData()
+    return ParkDetail(park: modelData.parks[2])
+        .environment(modelData)
 }
