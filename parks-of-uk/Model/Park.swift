@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-struct Park: Hashable, Codable {
+struct Park: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
     var country: String
