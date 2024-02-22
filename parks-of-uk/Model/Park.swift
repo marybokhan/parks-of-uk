@@ -3,6 +3,7 @@ import SwiftUI
 import CoreLocation
 
 struct Park: Hashable, Codable {
+    var id: Int
     var name: String
     var country: String
     var isFavorite: Bool

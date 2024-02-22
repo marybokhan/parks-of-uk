@@ -11,7 +11,13 @@ struct ParkDetail: View {
     @Environment(ModelData.self) var modelData
     var park: Park
     
+    var parkIndex: Int {
+        modelData.parks.firstIndex(where: { $0.id == park.id })!
+    }
+    
     var body: some View {
+        @Bindable var modelData = modelData
+        
         ScrollView {
             MapView(cooordinate: park.locationCoordinate)
                 .frame(height: 300)
@@ -21,8 +27,11 @@ struct ParkDetail: View {
                 .padding(.bottom, -100)
             
             VStack(alignment: .leading) {
-                Text(park.name)
-                    .font(.title)
+                HStack {
+                    Text(park.name)
+                        .font(.title)
+                    FavoriteButton(isSet: $modelData.parks[parkIndex].isFavorite)
+                }
                 Text(park.country)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
