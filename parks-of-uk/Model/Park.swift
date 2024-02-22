@@ -5,6 +5,7 @@ import CoreLocation
 struct Park: Hashable, Codable {
     var name: String
     var country: String
+    var isFavorite: Bool
     var description: String
     var keyActivities: String
     var website: String
