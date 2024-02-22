@@ -48,6 +48,6 @@ struct ParkDetail: View {
 
 #Preview {
     let modelData = ModelData()
-    return ParkDetail(park: modelData.parks[2])
+    return ParkDetail(park: modelData.parks[12])
         .environment(modelData)
 }
