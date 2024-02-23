@@ -11,6 +11,10 @@ import Foundation
 class ModelData {
     var parks: [Park] = load("Parks.json")
     
+    var features: [Park] {
+        parks.filter { $0.isFeatured }
+    }
+    
     var categories: [String: [Park]] {
         Dictionary(grouping: parks, by: { $0.country})
     }

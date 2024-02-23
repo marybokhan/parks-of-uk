@@ -4,6 +4,7 @@
         "country": "England",
         "id": 1,
         "isFavorite": false,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/09/hero-broads-600x400.jpg",
         "coordinates": {
             "latitude": 52.58774,
@@ -18,6 +19,7 @@
         "country": "England",
         "id": 2,
         "isFavorite": false,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/07/20170724-DNPA-SJ-BucklandBeacon-1-600x400.jpg",
         "coordinates": {
             "latitude": 50.5719,
@@ -32,6 +34,7 @@
         "country": "England",
         "id": 3,
         "isFavorite": false,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/07/Hero-image_exmoor_exp_autumn_valley_of_rocks_2019_cf025397_final_WEB-600x400.jpg",
         "coordinates": {
             "latitude": 51.1346,
@@ -46,6 +49,7 @@
         "country": "England",
         "id": 4,
         "isFavorite": true,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/10/LakeDistrict-HJohnson-LDNP-2018-59-Langdales-LR-600x400.jpg",
         "coordinates": {
             "latitude": 54.5772,
@@ -60,6 +64,7 @@
         "country": "England",
         "id": 5,
         "isFavorite": false,
+        "isFeatured": false,
         "imageURL": "https://www.newforestnpa.gov.uk/app/uploads/2020/05/1-HERO-Nick-Lucas.jpg",
         "coordinates": {
             "latitude": 50.8764,
@@ -74,6 +79,7 @@
         "country": "England",
         "id": 6,
         "isFavorite": false,
+        "isFeatured": true,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/07/Evening-lights-at-Staithes-by-Ebor-Images-resized-600x400.jpg",
         "coordinates": {
             "latitude": 54.3872,
@@ -88,6 +94,7 @@
         "country": "England",
         "id": 7,
         "isFavorite": false,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/07/Barrowburn-Walkers-c-Paul-Buxton-600x400.jpg",
         "coordinates": {
             "latitude": 55.3378,
@@ -102,6 +109,7 @@
         "country": "England",
         "id": 8,
         "isFavorite": false,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/07/Curbar-Edge-PDNP-600x400.jpg",
         "coordinates": {
             "latitude": 53.3342,
@@ -116,6 +124,7 @@
         "country": "England",
         "id": 9,
         "isFavorite": false,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/09/Baloon-ride-over-the-South-Downs-Robert-Maynard.1800-x-1200-600x400.png",
         "coordinates": {
             "latitude": 50.9346,
@@ -130,6 +139,7 @@
         "country": "England",
         "id": 10,
         "isFavorite": false,
+        "isFeatured": true,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/07/1.-Walls-and-Barns-Stephen-Garnett-600x400.jpg",
         "coordinates": {
             "latitude": 54.267,
@@ -144,6 +154,7 @@
         "country": "Scotland",
         "id": 11,
         "isFavorite": false,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/07/MHA_3_150810_1871-LR-600x400.jpg",
         "coordinates": {
             "latitude": 57.0492,
@@ -158,6 +169,7 @@
         "country": "Scotland",
         "id": 12,
         "isFavorite": true,
+        "isFeatured": true,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/09/Hero_Loch_Lomond-600x400.jpg",
         "coordinates": {
             "latitude": 56.0102,
@@ -172,6 +184,7 @@
         "country": "Wales",
         "id": 13,
         "isFavorite": true,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/10/Hero-Image-lr-1-600x400.jpg",
         "coordinates": {
             "latitude": 51.8632,
@@ -186,6 +199,7 @@
         "country": "Wales",
         "id": 14,
         "isFavorite": false,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/09/01.-Main-Thumbnail-image-1800X1200-600x400.jpg",
         "coordinates": {
             "latitude": 51.8123,
@@ -200,6 +214,7 @@
         "country": "Wales",
         "id": 15,
         "isFavorite": false,
+        "isFeatured": true,
         "imageURL": "https://snowdonia.gov.wales/wp-content/uploads/2022/02/shutterstock_1380934490.jpg",
         "coordinates": {
             "latitude": 52.9006,

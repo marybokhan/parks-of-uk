@@ -7,6 +7,7 @@ struct Park: Hashable, Codable, Identifiable {
     var name: String
     var country: String
     var isFavorite: Bool
+    var isFeatured: Bool
     var description: String
     var keyActivities: String
     var website: String

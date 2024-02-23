@@ -22,6 +22,7 @@
 		A1B8E1282B860E84008C7E2B /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8E1272B860E84008C7E2B /* CircleImage.swift */; };
 		A1B8E12A2B8612EA008C7E2B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8E1292B8612EA008C7E2B /* MapView.swift */; };
 		A1B8E12E2B864811008C7E2B /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8E12D2B864811008C7E2B /* ModelData.swift */; };
+		A1BC3E772B8908230085CAEA /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC3E762B8908230085CAEA /* FeatureCard.swift */; };
 		A1DA689E294CD8F1001BEE05 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA689D294CD8F0001BEE05 /* Park.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		A1B8E1272B860E84008C7E2B /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		A1B8E1292B8612EA008C7E2B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A1B8E12D2B864811008C7E2B /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		A1BC3E762B8908230085CAEA /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
 		A1DA689D294CD8F0001BEE05 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 			children = (
 				A107EB9B2B83AEDE004EB265 /* ParksApp.swift */,
 				A15A18932B87C26F004FA242 /* MainView.swift */,
+				A1BC3E752B8907FD0085CAEA /* FeatureView */,
 				A15A188C2B87B1D7004FA242 /* Categories */,
 				A15A18852B8761F2004FA242 /* Parks */,
 				A1B8E12B2B86409A008C7E2B /* Helpers */,
@@ -127,6 +130,14 @@
 				A1B8E12D2B864811008C7E2B /* ModelData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A1BC3E752B8907FD0085CAEA /* FeatureView */ = {
+			isa = PBXGroup;
+			children = (
+				A1BC3E762B8908230085CAEA /* FeatureCard.swift */,
+			);
+			path = FeatureView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 				A15A18942B87C26F004FA242 /* MainView.swift in Sources */,
 				A15A188B2B879AE6004FA242 /* ParkRow.swift in Sources */,
 				A1B8E12A2B8612EA008C7E2B /* MapView.swift in Sources */,
+				A1BC3E772B8908230085CAEA /* FeatureCard.swift in Sources */,
 				A1B8E12E2B864811008C7E2B /* ModelData.swift in Sources */,
 				A1DA689E294CD8F1001BEE05 /* Park.swift in Sources */,
 				A15A18892B876377004FA242 /* FavoriteButton.swift in Sources */,
