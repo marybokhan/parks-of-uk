@@ -13,6 +13,10 @@ struct CategoryHome: View {
     var body: some View {
         NavigationSplitView {
             List {
+                PageView(pages: modelData.features.map {
+                    FeatureCard(park: $0) })
+                .listRowInsets(EdgeInsets())
+                
                 ForEach(modelData.categories.keys.sorted(), id: \.self) { key in
                     CategoryRow(categoryName: key, parks: modelData.categories[key]!)
                 }
@@ -20,7 +24,7 @@ struct CategoryHome: View {
                 .listRowInsets(EdgeInsets())
             }
             .listStyle(.inset)
-            .navigationTitle("National Parks")
+            .navigationTitle("Featured")
         } detail: {
             Text("Select a Park")
         }

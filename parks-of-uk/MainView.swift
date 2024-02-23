@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var selection: Tab = .countries
+    @State private var selection: Tab = .featured
     
     enum Tab {
-        case countries
+        case featured
         case list
     }
     
@@ -19,9 +19,9 @@ struct MainView: View {
         TabView(selection: $selection) {
             CategoryHome()
                 .tabItem {
-                    Label("Countries", systemImage: "star")
+                    Label("Featured", systemImage: "star")
                 }
-                .tag(Tab.countries)
+                .tag(Tab.featured)
             
             ParkList()
                 .tabItem {

@@ -106,7 +106,7 @@
 			children = (
 				A107EB9B2B83AEDE004EB265 /* ParksApp.swift */,
 				A15A18932B87C26F004FA242 /* MainView.swift */,
-				A1BC3E752B8907FD0085CAEA /* FeatureView */,
+				A1BC3E752B8907FD0085CAEA /* PageView */,
 				A15A188C2B87B1D7004FA242 /* Categories */,
 				A15A18852B8761F2004FA242 /* Parks */,
 				A1B8E12B2B86409A008C7E2B /* Helpers */,
@@ -138,7 +138,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A1BC3E752B8907FD0085CAEA /* FeatureView */ = {
+		A1BC3E752B8907FD0085CAEA /* PageView */ = {
 			isa = PBXGroup;
 			children = (
 				A1BC3E762B8908230085CAEA /* FeatureCard.swift */,
@@ -146,7 +146,7 @@
 				A1BC3E7A2B890D720085CAEA /* PageViewController.swift */,
 				A1BC3E7C2B890FED0085CAEA /* PageView.swift */,
 			);
-			path = FeatureView;
+			path = PageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

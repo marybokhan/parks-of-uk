@@ -30,9 +30,6 @@ struct PageView<Page: View>: View {
 }
 
 #Preview {
-    PageView(
-        pages: ModelData().features.map {
-            FeatureCard(park: $0)
-        }
-    )
+    PageView(pages: ModelData().features.map {
+            FeatureCard(park: $0) })
 }
