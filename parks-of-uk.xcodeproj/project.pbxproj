@@ -23,6 +23,9 @@
 		A1B8E12A2B8612EA008C7E2B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8E1292B8612EA008C7E2B /* MapView.swift */; };
 		A1B8E12E2B864811008C7E2B /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8E12D2B864811008C7E2B /* ModelData.swift */; };
 		A1BC3E772B8908230085CAEA /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC3E762B8908230085CAEA /* FeatureCard.swift */; };
+		A1BC3E792B890B470085CAEA /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC3E782B890B470085CAEA /* PageControl.swift */; };
+		A1BC3E7B2B890D720085CAEA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC3E7A2B890D720085CAEA /* PageViewController.swift */; };
+		A1BC3E7D2B890FED0085CAEA /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC3E7C2B890FED0085CAEA /* PageView.swift */; };
 		A1DA689E294CD8F1001BEE05 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA689D294CD8F0001BEE05 /* Park.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,9 @@
 		A1B8E1292B8612EA008C7E2B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A1B8E12D2B864811008C7E2B /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		A1BC3E762B8908230085CAEA /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
+		A1BC3E782B890B470085CAEA /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		A1BC3E7A2B890D720085CAEA /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		A1BC3E7C2B890FED0085CAEA /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		A1DA689D294CD8F0001BEE05 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				A1BC3E762B8908230085CAEA /* FeatureCard.swift */,
+				A1BC3E782B890B470085CAEA /* PageControl.swift */,
+				A1BC3E7A2B890D720085CAEA /* PageViewController.swift */,
+				A1BC3E7C2B890FED0085CAEA /* PageView.swift */,
 			);
 			path = FeatureView;
 			sourceTree = "<group>";
@@ -217,9 +226,12 @@
 				A1BC3E772B8908230085CAEA /* FeatureCard.swift in Sources */,
 				A1B8E12E2B864811008C7E2B /* ModelData.swift in Sources */,
 				A1DA689E294CD8F1001BEE05 /* Park.swift in Sources */,
+				A1BC3E7D2B890FED0085CAEA /* PageView.swift in Sources */,
 				A15A18892B876377004FA242 /* FavoriteButton.swift in Sources */,
+				A1BC3E7B2B890D720085CAEA /* PageViewController.swift in Sources */,
 				A15A18872B876210004FA242 /* ParkList.swift in Sources */,
 				A107EB9E2B83B1F3004EB265 /* ParkDetail.swift in Sources */,
+				A1BC3E792B890B470085CAEA /* PageControl.swift in Sources */,
 				A14070BC2940F34D0043A6B8 /* AppConstants.swift in Sources */,
 				A107EB9C2B83AEDE004EB265 /* ParksApp.swift in Sources */,
 				A15A188E2B87B1F9004FA242 /* CategoryItem.swift in Sources */,
