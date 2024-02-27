@@ -22,9 +22,16 @@ struct ParkDetail: View {
             MapView(cooordinate: park.locationCoordinate)
                 .frame(height: 300)
             
-            CircleImage(image: park.image)
-                .offset(y: -120)
-                .padding(.bottom, -100)
+            AsyncImage(url: URL(string: park.imageURL)) { image in
+                CircleImage(image: image)
+                    .offset(y: -120)
+                    .padding(.bottom, -100)
+            } placeholder: {
+                let placeholder = Image("park-placeholder")
+                CircleImage(image: placeholder)
+                    .offset(y: -120)
+                    .padding(.bottom, -100)
+            }
             
             VStack(alignment: .leading) {
                 HStack {

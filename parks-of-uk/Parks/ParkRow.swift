@@ -12,15 +12,12 @@ struct ParkRow: View {
     
     var body: some View {
         HStack {
-            if let image = park.image {
-                image
-                    .resizable()
-                    .frame(width: 50, height: 50)
-            } else {
-                Image("park-placeholder")
-                    .resizable()
-                    .frame(width: 50, height: 50)
+            AsyncImage(url: URL(string: park.imageURL)) { image in
+                image.resizable()
+            } placeholder: {
+                Image("park-placeholder").resizable()
             }
+            .frame(width: 50, height: 50)
             
             Text(park.name)
             

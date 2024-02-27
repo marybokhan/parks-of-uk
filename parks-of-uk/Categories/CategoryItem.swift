@@ -12,12 +12,13 @@ struct CategoryItem: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if let image = park.image {
-                image
-                    .resizable()
-                    .frame(width: 155, height: 155)
-                    .cornerRadius(5)
+            AsyncImage(url: URL(string: park.imageURL)) { image in
+                image.resizable()
+            } placeholder: {
+                Image("park-placeholder").resizable()
             }
+            .frame(width: 155, height: 155)
+            .cornerRadius(5)
             
             Text(park.name)
                 .foregroundStyle(.primary)

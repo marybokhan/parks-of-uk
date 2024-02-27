@@ -11,11 +11,14 @@ struct FeatureCard: View {
     var park: Park
     
     var body: some View {
-        park.image?
-            .resizable()
-            .overlay {
-                TextOverlay(park: park)
-            }
+        AsyncImage(url: URL(string: park.imageURL)) { image in
+            image.resizable()
+                .overlay {
+                    TextOverlay(park: park)
+                }
+        } placeholder: {
+            Image("park-placeholder").resizable()
+        }
     }
 }
 
