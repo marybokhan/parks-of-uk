@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  ContentView.swift
 //  parks-of-uk
 //
 //  Created by Mary Cherkas on 22/02/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct ContentView: View {
     @State private var selection: Tab = .featured
     
     enum Tab {
@@ -33,6 +33,6 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    ContentView()
         .environment(ModelData())
 }

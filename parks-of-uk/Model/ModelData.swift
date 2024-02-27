@@ -9,7 +9,7 @@ import Foundation
 
 @Observable
 class ModelData {
-    var parks: [Park] = load("Parks.json")
+    var parks: [Park] = []
     
     var features: [Park] {
         parks.filter { $0.isFeatured }
@@ -18,27 +18,27 @@ class ModelData {
     var categories: [String: [Park]] {
         Dictionary(grouping: parks, by: { $0.country})
     }
-}
-
-func load<T: Decodable>(_ filename: String) -> T {
-    let data: Data
     
-    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-    else {
-        fatalError("Couldn't find \(filename) in main bundle.")
+    init() {
+        load()
     }
     
-    do {
-        data = try Data(contentsOf: file)
-    } catch {
-        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+    private func load() {
+        Task {
+            do {
+                self.parks = try await loadParks()
+            } catch {
+                fatalError("Error loading parks: \(error)")
+            }
+        }
     }
     
-    do {
+    private func loadParks() async throws -> [Park] {
+        guard let file = Bundle.main.url(forResource: "Parks", withExtension: "json") else {
+            fatalError("Parks.json not found")
+        }
+        let data = try Data(contentsOf: file)
         let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: data)
-    } catch {
-        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+        return try decoder.decode([Park].self, from: data)
     }
 }
-

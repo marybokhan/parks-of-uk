@@ -13,7 +13,7 @@ struct ParksApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ContentView()
                 .environment(modelData)
         }
     }
