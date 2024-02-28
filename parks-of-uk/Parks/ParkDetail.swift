@@ -39,6 +39,7 @@ struct ParkDetail: View {
                         .font(.title)
                     FavoriteButton(isSet: $modelData.parks[parkIndex].isFavorite)
                 }
+                
                 Text(park.country)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -46,16 +47,14 @@ struct ParkDetail: View {
                 Divider()
                 
                 Text("About")
-                    .font(.title3)
+                    .bold()
                 Text(park.description)
                     .padding(.bottom, 5)
                 Text("Key Activities")
-                    .font(.title3)
+                    .bold()
                 Text(park.keyActivities)
                     .padding(.bottom, 5)
-                Text("Website")
-                    .font(.title3)
-                Text(park.website)
+                Link("Visit park's website", destination: URL(string: park.website)!)
             }
             .padding()
         }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CategoryItem: View {
+    @Environment(\.colorScheme) var colorScheme
     var park: Park
     
     var body: some View {
@@ -21,7 +22,7 @@ struct CategoryItem: View {
             .cornerRadius(5)
             
             Text(park.name)
-                .foregroundStyle(.primary)
+                .foregroundStyle(colorScheme == .light ? .black : .white)
                 .font(.caption)
         }
         .padding(.leading, 15)

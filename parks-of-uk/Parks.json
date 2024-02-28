@@ -64,7 +64,7 @@
         "country": "England",
         "id": 5,
         "isFavorite": false,
-        "isFeatured": false,
+        "isFeatured": true,
         "imageURL": "https://www.newforestnpa.gov.uk/app/uploads/2020/05/1-HERO-Nick-Lucas.jpg",
         "coordinates": {
             "latitude": 50.8556,
@@ -139,7 +139,7 @@
         "country": "England",
         "id": 10,
         "isFavorite": false,
-        "isFeatured": true,
+        "isFeatured": false,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/07/1.-Walls-and-Barns-Stephen-Garnett-600x400.jpg",
         "coordinates": {
             "latitude": 54.2616,
@@ -184,7 +184,7 @@
         "country": "Wales",
         "id": 13,
         "isFavorite": true,
-        "isFeatured": false,
+        "isFeatured": true,
         "imageURL": "https://www.nationalparks.uk/app/uploads/2020/10/Hero-Image-lr-1-600x400.jpg",
         "coordinates": {
             "latitude": 51.8901,
@@ -214,7 +214,7 @@
         "country": "Wales",
         "id": 15,
         "isFavorite": false,
-        "isFeatured": true,
+        "isFeatured": false,
         "imageURL": "https://snowdonia.gov.wales/wp-content/uploads/2022/02/shutterstock_1380934490.jpg",
         "coordinates": {
             "latitude": 52.9139,
