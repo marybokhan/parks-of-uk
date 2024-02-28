@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A107EB9C2B83AEDE004EB265 /* ParksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A107EB9B2B83AEDE004EB265 /* ParksApp.swift */; };
 		A107EB9E2B83B1F3004EB265 /* ParkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A107EB9D2B83B1F3004EB265 /* ParkDetail.swift */; };
-		A14070BC2940F34D0043A6B8 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14070BB2940F34D0043A6B8 /* AppConstants.swift */; };
 		A15A18872B876210004FA242 /* ParkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15A18862B876210004FA242 /* ParkList.swift */; };
 		A15A18892B876377004FA242 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15A18882B876377004FA242 /* FavoriteButton.swift */; };
 		A15A188B2B879AE6004FA242 /* ParkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15A188A2B879AE6004FA242 /* ParkRow.swift */; };
@@ -32,7 +31,6 @@
 /* Begin PBXFileReference section */
 		A107EB9B2B83AEDE004EB265 /* ParksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParksApp.swift; sourceTree = "<group>"; };
 		A107EB9D2B83B1F3004EB265 /* ParkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetail.swift; sourceTree = "<group>"; };
-		A14070BB2940F34D0043A6B8 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		A15A18862B876210004FA242 /* ParkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkList.swift; sourceTree = "<group>"; };
 		A15A18882B876377004FA242 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		A15A188A2B879AE6004FA242 /* ParkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkRow.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				A1B8E12C2B8647E9008C7E2B /* Model */,
 				A18B694D2931383800C34A41 /* Assets.xcassets */,
 				A172ECCD293652F900D19DFA /* Parks.json */,
-				A14070BB2940F34D0043A6B8 /* AppConstants.swift */,
 				A18B69522931383800C34A41 /* Info.plist */,
 			);
 			path = "parks-of-uk";
@@ -232,7 +229,6 @@
 				A15A18872B876210004FA242 /* ParkList.swift in Sources */,
 				A107EB9E2B83B1F3004EB265 /* ParkDetail.swift in Sources */,
 				A1BC3E792B890B470085CAEA /* PageControl.swift in Sources */,
-				A14070BC2940F34D0043A6B8 /* AppConstants.swift in Sources */,
 				A107EB9C2B83AEDE004EB265 /* ParksApp.swift in Sources */,
 				A15A188E2B87B1F9004FA242 /* CategoryItem.swift in Sources */,
 				A15A18902B87B3EB004FA242 /* CategoryRow.swift in Sources */,

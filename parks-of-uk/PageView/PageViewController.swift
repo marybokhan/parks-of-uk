@@ -1,10 +1,3 @@
-//
-//  PageViewController.swift
-//  parks-of-uk
-//
-//  Created by Mary Cherkas on 23/02/2024.
-//
-
 import SwiftUI
 import UIKit
 
@@ -19,16 +12,18 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIPageViewController {
         let pageViewController = UIPageViewController(
             transitionStyle: .scroll,
-            navigationOrientation: .horizontal)
+            navigationOrientation: .horizontal
+        )
         pageViewController.dataSource = context.coordinator
         pageViewController.delegate = context.coordinator
-        
         return pageViewController
     }
     
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
         pageViewController.setViewControllers(
-            [context.coordinator.controllers[currentPage]], direction: .forward, animated: true
+            [context.coordinator.controllers[currentPage]], 
+            direction: .forward,
+            animated: true
         )
     }
     
@@ -77,6 +72,5 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
             }
         }
     }
-    
 }
 

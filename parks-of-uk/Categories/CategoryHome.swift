@@ -1,10 +1,3 @@
-//
-//  CategoryHome.swift
-//  parks-of-uk
-//
-//  Created by Mary Cherkas on 22/02/2024.
-//
-
 import SwiftUI
 
 struct CategoryHome: View {

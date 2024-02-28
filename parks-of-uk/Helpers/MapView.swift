@@ -1,10 +1,3 @@
-//
-//  MapView.swift
-//  parks-of-uk
-//
-//  Created by Mary Cherkas on 21/02/2024.
-//
-
 import SwiftUI
 import MapKit
 
@@ -19,7 +12,7 @@ struct MapView: View {
         MKCoordinateRegion(
             center: cooordinate,
             span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-            )
+        )
     }
 }
 

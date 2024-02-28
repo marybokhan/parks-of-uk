@@ -1,10 +1,3 @@
-//
-//  FeatureCard.swift
-//  parks-of-uk
-//
-//  Created by Mary Cherkas on 23/02/2024.
-//
-
 import SwiftUI
 
 struct FeatureCard: View {
