@@ -24,7 +24,7 @@ Technologies Utilized:
 ## Preview
 
 <p align="center">
-    <img src="media/parks-of-uk.png", width="600">
+    <img src="media/parks_uk.png", width="600">
 </p>
 
 ## License
