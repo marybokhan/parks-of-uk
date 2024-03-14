@@ -47,7 +47,14 @@ struct ParkDetail: View {
                     .bold()
                 Text(park.keyActivities)
                     .padding(.bottom, 5)
-                Link("Visit park's website", destination: URL(string: park.website)!)
+                
+                HStack {
+                    Image(systemName: "link")
+                        .foregroundStyle(.blue)
+                    
+                    let website = "\(park.website)".replacingOccurrences(of: "https://www.", with: "")
+                    Link(website, destination: URL(string: park.website)!)
+                }
             }
             .padding()
         }
