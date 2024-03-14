@@ -28,6 +28,6 @@ struct CategoryRow: View {
 }
 
 #Preview {
-    let parks = ModelData().parks
-    return CategoryRow(categoryName: parks[8].country, parks: Array(parks.prefix(4)))
+    let parks = ModelData.mock.parks
+    return CategoryRow(categoryName: parks[0].country, parks: Array(parks.prefix(3)))
 }

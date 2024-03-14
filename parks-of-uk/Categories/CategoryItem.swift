@@ -23,5 +23,5 @@ struct CategoryItem: View {
 }
 
 #Preview {
-    CategoryItem(park: ModelData().parks[7])
+    CategoryItem(park: ModelData.mock.parks[1])
 }

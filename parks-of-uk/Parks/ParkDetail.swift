@@ -55,7 +55,6 @@ struct ParkDetail: View {
 }
 
 #Preview {
-    let modelData = ModelData()
-    return ParkDetail(park: modelData.parks[12])
-        .environment(modelData)
+    ParkDetail(park: ModelData.mock.parks[1])
+        .environment(ModelData())
 }

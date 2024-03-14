@@ -5,7 +5,8 @@ struct ParkRow: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: park.imageURL)) { image in
+            let imageURL = URL(string: park.imageURL)
+            AsyncImage(url: imageURL) { image in
                 image.resizable()
             } placeholder: {
                 Image("park-placeholder").resizable()
@@ -25,6 +26,5 @@ struct ParkRow: View {
 }
 
 #Preview {
-    let parks = ModelData().parks
-    return ParkRow(park: parks[5])
+    ParkRow(park: ModelData.mock.parks[0])
 }
