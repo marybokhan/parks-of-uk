@@ -5,8 +5,7 @@ struct ParkRow: View {
     
     var body: some View {
         HStack {
-            let imageURL = URL(string: park.imageURL)
-            AsyncImage(url: imageURL) { image in
+            AsyncImage(url: URL(string: park.imageURL)) { image in
                 image.resizable()
             } placeholder: {
                 Image("park-placeholder").resizable()

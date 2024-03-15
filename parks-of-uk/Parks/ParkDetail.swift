@@ -17,14 +17,11 @@ struct ParkDetail: View {
             
             AsyncImage(url: URL(string: park.imageURL)) { image in
                 CircleImage(image: image)
-                    .offset(y: -120)
-                    .padding(.bottom, -100)
             } placeholder: {
-                let placeholder = Image("park-placeholder")
-                CircleImage(image: placeholder)
-                    .offset(y: -120)
-                    .padding(.bottom, -100)
+                CircleImage(image: Image("park-placeholder"))
             }
+            .offset(y: -120)
+            .padding(.bottom, -100)
             
             VStack(alignment: .leading) {
                 HStack {
