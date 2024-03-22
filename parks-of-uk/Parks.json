@@ -162,7 +162,7 @@
         },
         "description": "It has something for everyone, from exploring nature and wildlife in the mountains, to adventures in ancient woodlands or taking a dip in one of our freshwater Lochs.\nThe Cairngorms National Park has spectacular landscapes from wild, high mountains, to heather moorlands, magnificent forests, lowland farms and crofts, wetlands and rivers which wind through the flood plains – as the biggest and most northerly National Park in Britain, it is simply awe-inspiring.",
         "keyActivities": "Walking, Wildlife watching, Outdoor Activities",
-        "website": "https://cairngorms.co.uk"
+        "website": "https://www.cairngorms.co.uk"
     },
     {
         "name": "Loch Lomond & The Trossachs",
@@ -190,7 +190,7 @@
             "latitude": 51.8901,
             "longtitude": -3.4689
         },
-        "description": "Welcome to the Bannau Brycheiniog (Brecon Beacons) National Park – 520 square miles of adventure, heritage, internationally recognised dark skies, towns, villages and nature.\nOnly three hours from London and an hour from Cardiff, Swansea and Newport.  Find all the information you need to reconnect with nature in the Bannau Brycheiniog (Brecon Beacons) National Park.  #Discoveryourbreconbeacons",
+        "description": "Welcome to the Bannau Brycheiniog (Brecon Beacons) National Park – 520 square miles of adventure, heritage, internationally recognised dark skies, towns, villages and nature.\nOnly three hours from London and an hour from Cardiff, Swansea and Newport.  Find all the information you need to reconnect with nature in the Bannau Brycheiniog (Brecon Beacons) National Park.",
         "keyActivities": "Walking, Cycling and Mountain Biking, Stargazing",
         "website": "https://www.breconbeacons.org"
     },
@@ -222,6 +222,6 @@
         },
         "description": "A place for peace and tranquillity within a diverse, historic and vibrant landscape.\nSituated on the west coast of Britain, covering 823 square miles of diverse landscapes, Eryri National Park (Snowdonia) is a living, working area, and is home to over 26,000 people. As well as being the largest National Park in Wales, Eryri (Snowdonia) boasts the highest mountain in England and Wales.",
         "keyActivities": "Biking, Stargazing, Indulging in History",
-        "website": "https://snowdonia.gov.wales"
+        "website": "https://www.snowdonia.gov.wales"
     }
 ]

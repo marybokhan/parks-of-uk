@@ -25,6 +25,5 @@ struct ParkRow: View {
 }
 
 #Preview {
-    let parks = ModelData().parks
-    return ParkRow(park: parks[5])
+    ParkRow(park: ModelData.mock.parks[0])
 }

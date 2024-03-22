@@ -42,6 +42,6 @@ struct TextOverlay: View {
 }
 
 #Preview {
-    FeatureCard(park: ModelData().features[0])
+    FeatureCard(park: ModelData.mock.parks[1])
         .aspectRatio(3/2, contentMode: .fit)
 }

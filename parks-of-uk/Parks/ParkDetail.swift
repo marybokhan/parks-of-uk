@@ -17,14 +17,11 @@ struct ParkDetail: View {
             
             AsyncImage(url: URL(string: park.imageURL)) { image in
                 CircleImage(image: image)
-                    .offset(y: -120)
-                    .padding(.bottom, -100)
             } placeholder: {
-                let placeholder = Image("park-placeholder")
-                CircleImage(image: placeholder)
-                    .offset(y: -120)
-                    .padding(.bottom, -100)
+                CircleImage(image: Image("park-placeholder"))
             }
+            .offset(y: -120)
+            .padding(.bottom, -100)
             
             VStack(alignment: .leading) {
                 HStack {
@@ -47,7 +44,14 @@ struct ParkDetail: View {
                     .bold()
                 Text(park.keyActivities)
                     .padding(.bottom, 5)
-                Link("Visit park's website", destination: URL(string: park.website)!)
+                
+                HStack {
+                    Image(systemName: "link")
+                        .foregroundStyle(.blue)
+                    
+                    let website = "\(park.website)".replacingOccurrences(of: "https://www.", with: "")
+                    Link(website, destination: URL(string: park.website)!)
+                }
             }
             .padding()
         }
@@ -55,7 +59,6 @@ struct ParkDetail: View {
 }
 
 #Preview {
-    let modelData = ModelData()
-    return ParkDetail(park: modelData.parks[12])
-        .environment(modelData)
+    ParkDetail(park: ModelData.mock.parks[1])
+        .environment(ModelData())
 }
